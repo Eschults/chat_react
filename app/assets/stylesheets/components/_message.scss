@@ -33,3 +33,22 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+#chat {
+  margin-top: 20px;
+}
+
+.form-container {
+  border: 1px solid #ECECEC;
+  border-top: none;
+  padding: 10px;
+  textarea.form-control {
+    border: 1px solid #ECECEC;
+    resize: none;
+    &:focus {
+      outline: none;
+      border: 1px solid blue;
+      box-shadow: none;
+    }
+  }
+}
