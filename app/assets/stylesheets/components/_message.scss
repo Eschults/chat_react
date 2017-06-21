@@ -1,0 +1,35 @@
+.message {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 10px;
+  &.mine {
+    flex-direction: row;
+    .avatar {
+      background-color: #F7F7F7;
+      margin-right: 10px;
+    }
+  }
+  .avatar {
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+  }
+  .content {
+    font-size: 14px;
+    background-color: #F2F9FC;
+    padding: 11px;
+    max-width: 340px;
+    border-radius: 5px;
+  }
+}
+
+.messages {
+  min-height: calc(100vh - 70px - 100px);
+  border: 1px solid #ECECEC;
+  padding: 30px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

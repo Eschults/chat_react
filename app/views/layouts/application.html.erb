@@ -12,7 +12,11 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <%= yield %>
+        </div>
+      </div>
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'chat' %>
