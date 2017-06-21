@@ -12,17 +12,25 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/messages.json`)
-          .then(res => {
-            debugger
-            const messages = res.data.messages;
-            this.setState({ messages });
-          });
+    this.fetchMessages();
+    App.cable.subscriptions.create('MessagesChannel', {
+      received: (data) => {
+        this.fetchMessages(),
+      }
+    });
+  }
+
+  fetchMessages() {
+    axios.get('/messages.json')
+      .then(response => {
+        const messages = response.data.messages;
+        this.setState({ messages });
+      });
   }
 
   renderMessages() {
     return this.state.messages.map((message) => {
-      return <Message message={message} />;
+      return <Message key={message.id} message={message} />;
     })
   }
 
