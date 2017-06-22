@@ -5,8 +5,10 @@
   &.mine {
     flex-direction: row;
     .avatar {
-      background-color: #F7F7F7;
       margin-right: 10px;
+    }
+    .content {
+      background-color: #F7F7F7;
     }
   }
   .avatar {
@@ -42,7 +44,7 @@
   border: 1px solid #ECECEC;
   border-top: none;
   padding: 10px;
-  textarea.form-control {
+  input.form-control {
     border: 1px solid #ECECEC;
     resize: none;
     &:focus {
