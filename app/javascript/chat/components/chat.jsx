@@ -6,7 +6,7 @@ class Chat extends Component {
   render() {
     return (
       <div>
-        <MessageList />
+        <MessageList currentUserId={this.props.currentUserId} />
         <MessageForm />
       </div>
     );

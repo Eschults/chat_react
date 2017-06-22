@@ -9,14 +9,14 @@ class MessageList extends Component {
     this.state = {
       messages: []
     };
+
+    this.fetchMessages = this.fetchMessages.bind(this);
   }
 
   componentDidMount() {
     this.fetchMessages();
     App.cable.subscriptions.create('MessagesChannel', {
-      received: (data) => {
-        this.fetchMessages(),
-      }
+      received: this.fetchMessages
     });
   }
 
@@ -30,7 +30,7 @@ class MessageList extends Component {
 
   renderMessages() {
     return this.state.messages.map((message) => {
-      return <Message key={message.id} message={message} />;
+      return <Message key={message.id} message={message} currentUserId={this.props.currentUserId} />;
     })
   }
 
